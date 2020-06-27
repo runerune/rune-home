@@ -1,0 +1,12 @@
+h1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	text-indent: -1000vw;
+	background: url(../../assets/logo.svg) no-repeat center;
+	height: 10vh;
+	width: 100vw;
+	display: block;
+	margin-top: 3vh;
+}
