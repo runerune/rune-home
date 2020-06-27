@@ -17,7 +17,9 @@ export class PanoComponent implements OnInit {
 			type: 'equirectangular',
 			panorama: 'assets/pano-background.jpg',
 			preview: 'assets/pano-preview.jpg',
-			keyboardZoom : false,
+			keyboardZoom: false,
+			disableKeyboardCtrl: true,
+			mouseZoom: false,
 			friction: 0.01,
 			pitch: -25,
 			yaw: 10,
@@ -27,6 +29,7 @@ export class PanoComponent implements OnInit {
 			autoRotateInactivityDelay: 3*1000,
 			autoRotateStopDelay: 1,
 			showControls: false,
+			draggable: false,
 		});
 
 	}
