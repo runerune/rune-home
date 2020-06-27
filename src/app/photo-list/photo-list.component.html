@@ -1,1 +1,7 @@
-<div class="photo-list">kdfhjalskd hlkasjhf klsahdd</div>
+<div class="photo-list">
+	<ul>
+		<li *ngFor="let photo of photos" style="background-image: url({{photo.thumb}});">
+			<img src="{{photo.thumb}}">
+		</li>
+	</ul>
+</div>

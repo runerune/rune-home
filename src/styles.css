@@ -21,7 +21,18 @@ body {
 }
 
 .pnlm-load-box {
-	top: 80% !important;
+	top: 1rem !important;
+	left: 1rem !important;
+	margin: 0 !important;
+	height: 2.6rem !important;
+}
+
+.pnlm-load-box p, .pnlm-load-box .pnlm-lmsg {
+	display: none;
+}
+
+.pnlm-load-box .pnlm-lbar {
+	margin-top: 1.1rem !important;
 }
 
 .pnlm-container {

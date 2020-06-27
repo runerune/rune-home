@@ -15,7 +15,9 @@ export class PhotoListComponent implements OnInit {
 		this.selected = 0;
 	}
 
-	ngOnInit(): void {
+	async ngOnInit(): Promise<void> {
+		this.photos = await this.load();
+		console.log(this.photos);
 	}
 
 	async load(): Promise<Array<Photo>> {
