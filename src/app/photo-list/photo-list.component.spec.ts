@@ -29,26 +29,44 @@ describe('PhotoListComponent', () => {
 		expect(component.load).toEqual(jasmine.any(Function));
 	});
 		
-	it('should load photos module', async () => {
-		spyOn(component, 'load').and.returnValue([{ foo: 'bar' }]);
-		await component.load();
+	it('should load photos', async () => {
+		spyOn(component, 'load').and.returnValue(Promise.resolve([{
+			"url": "foo",
+			"thumb": "bar"
+		}]));
+		const result = await component.load();
 		
-		expect(component.photos.length).toBeGreaterThan(0);
-		expect(component.photos[0]).toBe({ foo: 'bar' });
+		expect(result.length).toBeGreaterThan(0);
+		expect(result[0]).toEqual({
+			"url": "foo",
+			"thumb": "bar"
+		});
 	});
 
-	it('should select a photo', async () => {
-		component.photos = ['a','s','d','f'];
-		component.select(42);
-		
-		expect(component.selected).toBe(2);
+	it('should select a photo', () => {
+		component.photos = [{
+			"url": "foo",
+			"thumb": "bar"
+		}, {
+			"url": "baz",
+			"thumb": "baf"
+		}];
+
+		component.select(1);
+		expect(component.selected).toBe(1);
 	});
 
-	it('should not select a photo that doesnt exist', async () => {
-		component.photos = ['a','s','d','f'];
-		component.select(99);
-		
-		expect(component.selected).toBe(4);
+	it('should not select a photo that doesnt exist', () => {
+		component.photos = [{
+			"url": "foo",
+			"thumb": "bar"
+		}, {
+			"url": "baz",
+			"thumb": "baf"
+		}];
+
+		component.select(123);
+		expect(component.selected).toBe(1);
 	});
 
 	
