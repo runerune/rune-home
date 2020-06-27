@@ -4,19 +4,28 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 export class EventBusService {
-	listeners = [];
+	listeners = {};
 
 	constructor() { }
 
-	push() {}
+	push(event: string, data: any) {
+		try {
+			for(let listener in this.listeners[event]) {
+				// why are objects not Iterable???
+				this.listeners[event][listener](data);
+			}
+		} catch(e) {
+			console.log('failed to find listners for event '+event);
+		}
+	}
 
 
-	
+
 	removeListener(name: string, event: string) {
 		try {
 			delete this.listeners[event][name];
 		} catch(e) {
-			console.log('unknown listner name and event combo');
+			console.log('unknown listner: '+name+ ' for event '+event);
 		}
 	}
 
