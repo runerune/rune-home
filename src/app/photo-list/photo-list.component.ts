@@ -24,7 +24,7 @@ export class PhotoListComponent implements OnInit {
 	}
 
 	select(index: number): void {
-		this.selected = (index > this.photos.length) ? this.photos.length-1 : index;
+		this.selected = (index > this.photos.length-1) ? this.photos.length-1 : index;
 	}
 
 }

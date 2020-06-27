@@ -69,6 +69,19 @@ describe('PhotoListComponent', () => {
 		expect(component.selected).toBe(1);
 	});
 
+	it('should not select a photo that doesnt exist in an off by one scenario', () => {
+		component.photos = [{
+			"url": "foo",
+			"thumb": "bar"
+		}, {
+			"url": "baz",
+			"thumb": "baf"
+		}];
+
+		component.select(2);
+		expect(component.selected).toBe(1);
+	});
+
 	
 	
 });
