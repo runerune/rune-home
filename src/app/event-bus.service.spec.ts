@@ -35,7 +35,7 @@ describe('EventBusService', () => {
 	});
 
 	it('should add a listener', () => {
-		service.push('fooEvent', function(){});
+		service.push('fooListener', 'fooEvent', function(){});
 		expect(service.listeners.fooEvent).toEqual([]);
 		expect(service.listeners.fooEvent[0]).toEqual(jasmine.any(Function));
 	});
