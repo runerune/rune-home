@@ -9,7 +9,13 @@ export class EventBusService {
 	constructor() { }
 
 	push() {}
-	removeListener() {}
+	removeListener(name: string, event: string) {
+		try {
+			delete this.listeners[event][name];
+		} catch(e) {
+			console.log('unknown listner name and event combo');
+		}
+	}
 
 	addListener(name: string, event: string, listener: CallableFunction) {
 		if(typeof this.listeners[event] !== 'object') {
