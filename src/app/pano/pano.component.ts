@@ -7,7 +7,7 @@ declare const pannellum: any;
 	styleUrls: ['./pano.component.css']
 })
 export class PanoComponent implements OnInit {
-	private pano;
+	pano;
 
 	constructor() { }
 

@@ -16,16 +16,16 @@ describe('EventBusService', () => {
 
 	it('should expose addListener method', () => {
 		expect(service.addListener).toBeDefined();
-		expect(service.addListener).toBe(jasmine.any(Function));
+		expect(service.addListener).toEqual(jasmine.any(Function));
 	});
 
 	it('should expose removeListener method', () => {
 		expect(service.removeListener).toBeDefined();
-		expect(service.removeListener).toBe(jasmine.any(Function));
+		expect(service.removeListener).toEqual(jasmine.any(Function));
 	});
 
 	it('should expose push method', () => {
 		expect(service.push).toBeDefined();
-		expect(service.push).toBe(jasmine.any(Function));
+		expect(service.push).toEqual(jasmine.any(Function));
 	});
 });
