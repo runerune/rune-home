@@ -9,6 +9,9 @@ export class EventBusService {
 	constructor() { }
 
 	push() {}
+
+
+	
 	removeListener(name: string, event: string) {
 		try {
 			delete this.listeners[event][name];

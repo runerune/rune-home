@@ -47,4 +47,14 @@ describe('EventBusService', () => {
 		expect(service.listeners['fooEvent']).toEqual(jasmine.any(Object));
 		expect(service.listeners['fooEvent']['fooListener']).not.toBeDefined();
 	});
+
+	it('should notify listener', () => {
+		const fooListener = jasmine.createSpy();
+		const fooData = { foo: 123, bar: false };
+
+		service.addListener('fooListener', 'fooEvent', fooListener);
+		service.push('fooEvent', fooData);
+
+		expect(fooListener).toHaveBeenCalledWith(fooData);
+	});
 });
