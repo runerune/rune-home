@@ -22,7 +22,11 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, './coverage/rune-home'),
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
-    },
+	},
+	files: [
+		"node_modules/pannellum/build/pannellum.css",
+		"node_modules/pannellum/build/pannellum.js"
+	],
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
