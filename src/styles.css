@@ -20,3 +20,11 @@ body {
 	height: 100vh;
 	overflow: hidden;
 }
+
+.pnlm-load-box {
+	top: 80% !important;
+}
+
+.pnlm-container {
+	background-image: none;
+}

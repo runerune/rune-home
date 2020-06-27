@@ -19,7 +19,7 @@ export class PanoComponent implements OnInit {
 			preview: 'assets/pano-preview.jpg',
 			keyboardZoom : false,
 			friction: 0.01,
-			pitch: -14,
+			pitch: -25,
 			yaw: 10,
 			maxPitch: 38,
 			autoRotate: -2,
@@ -28,15 +28,6 @@ export class PanoComponent implements OnInit {
 			autoRotateStopDelay: 1,
 			showControls: false,
 		});
-
-
-		this.pitchInterval = setInterval(() => {
-			if(this.pano.getPitch() < -35) {
-				console.log('hide logo');
-			} else {
-				console.log('show logo');
-			}
-		}, 100);
 
 	}
 

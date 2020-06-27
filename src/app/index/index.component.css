@@ -1,12 +1,32 @@
-h1 {
+.intro {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 50%;
+	left: 50%;
 	z-index: 50;
 	text-indent: -1000vw;
-	background: url(../../assets/logo.svg) no-repeat center;
-	height: 10vh;
-	width: 100vw;
+	height: 32vh;
+	width: 32vh;
 	display: block;
-	margin-top: 3vh;
+	background: rgba(255,255,255,.7);
+	backdrop-filter: blur(.5em);
+	border-radius: 32vh;
+	margin: -16vh 0 0 -16vh;
+}
+
+.intro h1 { 
+	position: absolute;
+}
+
+.intro img {
+	height: 100%;
+	margin: 9.6vh auto 0;
+	height: 10vh;
+	display: block;
+	position: relative;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
 }
