@@ -22,4 +22,8 @@ describe('PanoComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+
+	/*it('should init panorama', () => {
+		expect(this.pano).toBeDefined();
+	});*/
 });
