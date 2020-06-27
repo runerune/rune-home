@@ -16,14 +16,40 @@
 	backdrop-filter: contrast(70%) blur(1rem);
 }
 
+.photo-list ul:after {
+	content: "";
+	flex: auto;
+	padding: 0 3rem;
+	width: 100%;
+}
+
 .photo-list li {
-	min-width: 30%;
-	max-width: 30%;
-	margin: 1rem;
+	min-width: 25%;
+	max-width: 25%;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+.photo-list li div {
 	background-repeat: no-repeat;
 	background-size: cover;
-	border-radius: 1rem;
-	overflow: hidden;
+	margin: 1rem;
+	border-radius: .5rem;
+	transition: box-shadow .2s, filter .2s;
+	box-shadow: 0 0 0 .3rem transparent;
+	cursor: pointer;
+}
+
+.photo-list li:hover div {
+	transition: box-shadow .1s, filter .1s;
+	box-shadow: 0 0 0 .3rem rgba(255,255,255,.5);
+	filter: contrast(120%) brightness(1.1);
+}
+
+.photo-list li:nth-of-type(6n+1),
+.photo-list li:nth-of-type(6n) {
+	min-width: 50%;
+	max-width: 50%;
 }
 
 .photo-list img {
