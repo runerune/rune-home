@@ -8,7 +8,7 @@ export class EventBusService {
 
 	constructor() { }
 
-	push(event: string, data: any) {
+	push(event: string, data: any): void {
 		try {
 			for(let listener in this.listeners[event]) {
 				// why are objects not Iterable???
@@ -19,7 +19,7 @@ export class EventBusService {
 		}
 	}
 
-	removeListener(name: string, event: string) {
+	removeListener(name: string, event: string):void {
 		try {
 			delete this.listeners[event][name];
 		} catch(e) {
@@ -27,7 +27,7 @@ export class EventBusService {
 		}
 	}
 
-	addListener(name: string, event: string, listener: CallableFunction) {
+	addListener(name: string, event: string, listener: CallableFunction): void {
 		if(typeof this.listeners[event] !== 'object') {
 			this.listeners[event] = {};
 		}
