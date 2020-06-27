@@ -8,10 +8,10 @@ export class EventBusService {
 
 	constructor() { }
 
-	addListener() {}
+	push() {}
 	removeListener() {}
 
-	push(name: string, event: string, listener: CallableFunction) {
+	addListener(name: string, event: string, listener: CallableFunction) {
 		if(typeof this.listeners[event] !== 'object') {
 			this.listeners[event] = {};
 		}
