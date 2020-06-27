@@ -1,50 +1,50 @@
 [
 	{
 		"url": "",
-		"thumb": "https://picsum.photos/seed/86/400/300"
+		"thumb": "assets/photos/thumb/katowice-bricks.jpg"
 	},
 	{
 		"url": "",
-		"thumb": "https://picsum.photos/seed/1/400/300"
+		"thumb": "assets/photos/thumb/chorzow-park.jpg"
 	},
 	{
 		"url": "",
-		"thumb": "https://picsum.photos/seed/3/400/300"
+		"thumb": "assets/photos/thumb/katowice-altus.jpg"
 	},
 	{
 		"url": "",
-		"thumb": "https://picsum.photos/seed/4/400/300"
+		"thumb": "assets/photos/thumb/katowice-monastery.jpg"
 	},
 	{
 		"url": "",
-		"thumb": "https://picsum.photos/seed/5/400/300"
+		"thumb": "assets/photos/thumb/plawniowice-palace.jpg"
 	},
 	{
 		"url": "",
-		"thumb": "https://picsum.photos/seed/6/400/300"
+		"thumb": "assets/photos/thumb/katowice-center.jpg"
 	},
 	{
 		"url": "",
-		"thumb": "https://picsum.photos/seed/7/400/300"
+		"thumb": "assets/photos/thumb/chorzow-stadium.jpg"
 	},
 	{
 		"url": "",
-		"thumb": "https://picsum.photos/seed/8/400/300"
+		"thumb": "assets/photos/thumb/krakow-square.jpg"
 	},
 	{
 		"url": "",
-		"thumb": "https://picsum.photos/seed/9/400/300"
+		"thumb": "assets/photos/thumb/moszna-palace.jpg"
 	},
 	{
 		"url": "",
-		"thumb": "https://picsum.photos/seed/10/400/300"
+		"thumb": "assets/photos/thumb/pszczyna-palace.jpg"
 	},
 	{
 		"url": "",
-		"thumb": "https://picsum.photos/seed/11/400/300"
+		"thumb": "assets/photos/thumb/katowice-museum.jpg"
 	},
 	{
 		"url": "",
-		"thumb": "https://picsum.photos/seed/12/400/300"
-	}
+		"thumb": "assets/photos/thumb/ogrodzieniec-fields.jpg"
+	}	
 ]

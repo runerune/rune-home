@@ -33,17 +33,19 @@
 .photo-list li div {
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
 	margin: 1rem;
-	border-radius: .5rem;
+	border-radius: .55rem;
 	transition: box-shadow .2s, filter .2s;
 	box-shadow: 0 0 0 .3rem transparent;
 	cursor: pointer;
+	max-height: 18rem;
 }
 
 .photo-list li:hover div {
 	transition: box-shadow .1s, filter .1s;
 	box-shadow: 0 0 0 .3rem rgba(255,255,255,.5);
-	filter: contrast(120%) brightness(1.1);
+	filter: contrast(110%) brightness(1.05);
 }
 
 .photo-list li:nth-of-type(6n+1),
