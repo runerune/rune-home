@@ -28,4 +28,15 @@ describe('EventBusService', () => {
 		expect(service.push).toBeDefined();
 		expect(service.push).toEqual(jasmine.any(Function));
 	});
+
+	it('should hold a list of listners', () => {
+		expect(service.listeners).toBeDefined();
+		expect(service.listeners).toEqual({});
+	});
+
+	it('should add a listener', () => {
+		service.push('fooEvent', function(){});
+		expect(service.listeners.fooEvent).toEqual([]);
+		expect(service.listeners.fooEvent[0]).toEqual(jasmine.any(Function));
+	});
 });
