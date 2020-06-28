@@ -6,9 +6,20 @@ import { EventBusService } from '../event-bus.service';
 describe('PhotoComponent', () => {
 	let component: PhotoComponent;
 	let fixture: ComponentFixture<PhotoComponent>;
+	let injectedService;
 
 	class MockEventBusService {
-		push(event: string, data: any) {}
+		listeners: Array<CallableFunction>;
+
+		addListener(name: string, event: string, listener: CallableFunction) {
+			this.listeners.push(listener);
+		}
+
+		fakePush(data: any) {
+			for(let listener of this.listeners) {
+				listener(data);
+			}
+		}
 	}
 
 	beforeEach(async(() => {
@@ -17,6 +28,8 @@ describe('PhotoComponent', () => {
 			providers: [{ provide: EventBusService, useClass: MockEventBusService }],
 		})
 		.compileComponents();
+
+		injectedService = TestBed.get(EventBusService);
 	}));
 
 	beforeEach(() => {
@@ -30,8 +43,8 @@ describe('PhotoComponent', () => {
 	});
 
 	it('should react to show photo event', () => {
-		//component.eventBusService
-		expect(component).toBeTruthy();
+		injectedService.fakePush('photoSelect', 'foobar')
+		expect(component.url).toBe('foobar');
 	});
 
 	
