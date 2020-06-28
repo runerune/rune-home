@@ -8,9 +8,7 @@ describe('PhotoListComponent', () => {
 	let pushSpy;
 
 	class MockEventBusService {
-		push(event: string, data: any) {
-			return jasmine.createSpy();
-		}
+		push(event: string, data: any) {}
 	}
 
 	beforeEach(async(() => {
