@@ -12,7 +12,7 @@ export class PhotoListComponent implements OnInit {
 	selected: number;
 
 	constructor(
-		public eventBusService: EventBusService,
+		private eventBusService: EventBusService,
 	) { 
 		this.photos = [];
 		this.selected = 0;

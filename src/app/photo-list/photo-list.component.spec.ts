@@ -5,17 +5,22 @@ import { EventBusService } from '../event-bus.service';
 describe('PhotoListComponent', () => {
 	let component: PhotoListComponent;
 	let fixture: ComponentFixture<PhotoListComponent>;
+	let pushSpy;
 
 	class MockEventBusService {
-		push(event: string, data: any) {}
+		push(event: string, data: any) {
+			return jasmine.createSpy();
+		}
 	}
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
 			declarations: [ PhotoListComponent ],
-			providers: [{ provide: EventBusService, useClass: MockEventBusService }],   
+			providers: [{ provide: EventBusService, useClass: MockEventBusService }],
 		})
 		.compileComponents();
+
+		pushSpy = spyOn(TestBed.get(EventBusService), 'push');
 	}));
 
 	beforeEach(() => {
@@ -49,8 +54,6 @@ describe('PhotoListComponent', () => {
 	});
 
 	it('should select a photo', () => {
-		const pushSpy = spyOn(component.eventBusService, 'push');
-
 		component.photos = [{
 			url: 'foo',
 			thumb: 'bar'
@@ -64,8 +67,6 @@ describe('PhotoListComponent', () => {
 	});
 
 	it('should not select a photo that doesnt exist', () => {
-		const pushSpy = spyOn(component.eventBusService, 'push');
-
 		component.photos = [{
 			url: 'foo',
 			thumb: 'bar'
@@ -79,8 +80,6 @@ describe('PhotoListComponent', () => {
 	});
 
 	it('should not select a photo that doesnt exist in an off by one scenario', () => {
-		const pushSpy = spyOn(component.eventBusService, 'push');
-
 		component.photos = [{
 			url: 'foo',
 			thumb: 'bar'
