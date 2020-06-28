@@ -47,5 +47,9 @@ describe('PhotoComponent', () => {
 		expect(component.url).toBe('foobar');
 	});
 
+	it('should clear url on close', () => {
+		component.close();
+		expect(component.url).toBe(null);
+	});
 	
 });
