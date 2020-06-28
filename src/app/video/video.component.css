@@ -2,5 +2,40 @@
 	position: relative;
 	z-index: 50;
 	width: 100%;
-	backdrop-filter: contrast(70%) blur(1rem);
 }
+
+.video iframe {
+	width: 1280px;
+	height: 720px;
+	margin: 0 auto;
+	padding: 0 0 4rem;
+	display: block;
+}
+
+@media only screen and (max-width: 1420px) {
+	.video iframe {
+		width: 960px;
+		height: 540px;
+	}
+}
+
+@media only screen and (max-width: 1120px) {
+	.video iframe {
+		width: 720px;
+		height: 360px;
+	}
+}
+
+@media only screen and (max-width: 860px) {
+	.video iframe {
+		width: 540px;
+		height: 270px;
+	}
+} 
+
+@media only screen and (max-width: 690px) {
+	.video iframe {
+		width: 405px;
+		height: 202px;
+	}
+} 
