@@ -8,6 +8,7 @@ import { PanoComponent } from './pano/pano.component';
 import { PhotoComponent } from './photo/photo.component';
 import { PhotoListComponent } from './photo-list/photo-list.component';
 import { PhotoFeaturedComponent } from './photo-featured/photo-featured.component';
+import { VideoComponent } from './video/video.component';
 
 @NgModule({
 	declarations: [
@@ -16,7 +17,8 @@ import { PhotoFeaturedComponent } from './photo-featured/photo-featured.componen
 		PanoComponent,
 		PhotoComponent,
 		PhotoListComponent,
-		PhotoFeaturedComponent
+		PhotoFeaturedComponent,
+		VideoComponent
 	],
 	imports: [
 		BrowserModule,
