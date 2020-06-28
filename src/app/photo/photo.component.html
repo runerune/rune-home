@@ -1,4 +1,4 @@
-<div class="photo" *ngIf="url">
+<div class="photo" *ngIf="url" (click)="close()">
 	<div class="photo-inner">
 		<img [src]="url" alt="selected photo">
 		<button (click)="close()">close</button>
