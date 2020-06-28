@@ -1,0 +1,24 @@
+.photo {
+	z-index: 50;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+}
+
+.photo-inner {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	
+}
+
+.photo img {
+	width: 80vw;
+	border: .3rem solid #eee;
+	box-shadow: 0 0 1rem rgba(0,0,0,.5);
+	image-rendering: crisp-edges;
+}

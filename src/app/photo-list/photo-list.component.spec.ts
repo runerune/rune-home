@@ -52,44 +52,8 @@ describe('PhotoListComponent', () => {
 	});
 
 	it('should select a photo', () => {
-		component.photos = [{
-			url: 'foo',
-			thumb: 'bar'
-		}, {
-			url: 'baz',
-			thumb: 'baf'
-		}];
-
-		component.select(1);
-		expect(pushSpy).toHaveBeenCalledWith('photoSelect', 'baz');
+		component.select('foobar');
+		expect(pushSpy).toHaveBeenCalledWith('photoSelect', 'foobar');
 	});
 
-	it('should not select a photo that doesnt exist', () => {
-		component.photos = [{
-			url: 'foo',
-			thumb: 'bar'
-		}, {
-			url: 'baz',
-			thumb: 'baf'
-		}];
-
-		component.select(123);
-		expect(pushSpy).not.toHaveBeenCalled();
-	});
-
-	it('should not select a photo that doesnt exist in an off by one scenario', () => {
-		component.photos = [{
-			url: 'foo',
-			thumb: 'bar'
-		}, {
-			url: 'baz',
-			thumb: 'baf'
-		}];
-
-		component.select(2);
-		expect(pushSpy).not.toHaveBeenCalled();
-	});
-
-	
-	
 });

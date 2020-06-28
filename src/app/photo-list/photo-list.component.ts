@@ -27,9 +27,8 @@ export class PhotoListComponent implements OnInit {
 		return await photos.json();
 	}
 
-	select(index: number): void {
-		if(index > this.photos.length-1) return;
-		this.eventBusService.push('photoSelect', this.photos[index].url);
+	select(url: string): void {
+		this.eventBusService.push('photoSelect', url);
 	}
 
 }

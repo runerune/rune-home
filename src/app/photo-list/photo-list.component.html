@@ -1,8 +1,8 @@
 <div class="photo-list">
 	<ul>
 		<li *ngFor="let photo of photos">
-			<div style="background-image: url({{photo.thumb}});">
-				<img src="{{photo.thumb}}">
+			<div style="background-image: url({{photo.thumb}});" (click)="select(photo.url)">
+				<img [src]="photo.thumb" [alt]="photo.url">
 			</div>
 		</li>
 	</ul>
