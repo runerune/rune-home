@@ -23,22 +23,18 @@ export class PhotoComponent implements OnInit {
 		});
 	}
 
-	close() {
+	close(): void {
 		this.url = null;
 		this.visible = false;
 	}
 
-	onLoad() {
-		console.log('image onload');
+	onLoad(): void {
 		this.visible = true;
 	}
 	
-	onError() {
-		console.log('image onerror');
+	onError(): void {
 		this.visible = false;
-
 		window.alert('Could not load image '+this.url);
-
 		this.url = null;
 	}
 

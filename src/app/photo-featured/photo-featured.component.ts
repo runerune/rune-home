@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./photo-featured.component.css']
 })
 export class PhotoFeaturedComponent implements OnInit {
+	url: string | null;
 
 	constructor() { }
 
-	ngOnInit(): void {
+	async ngOnInit(): Promise<void> {
+		this.url = null;
+	}
+
+	async load() {
+		const featured = await (await fetch('../../assets/featured.json')).json();
+		this.url = featured.url;
 	}
 
 }
