@@ -10,7 +10,13 @@ export class PanoComponent implements OnInit {
 	pano;
 	pitchInterval;
 
-	constructor() { }
+	private hfov: number = 100;
+
+	constructor() {
+		if(window.innerWidth < 1400) this.hfov = 80;
+		if(window.innerWidth < 1000) this.hfov = 60;
+		if(window.innerWidth < 700) this.hfov = 40;
+	}
 
 	ngOnInit(): void {
 		this.pano = pannellum.viewer('pano-container', {
@@ -30,6 +36,7 @@ export class PanoComponent implements OnInit {
 			autoRotateStopDelay: 1,
 			showControls: false,
 			draggable: false,
+			hfov: this.hfov,
 		});
 
 	}
