@@ -52,8 +52,27 @@ describe('PhotoComponent', () => {
 	});
 
 	it('should clear url on close', () => {
+		component.visible = true;
 		component.close();
+
 		expect(component.url).toBe(null);
+		expect(component.visible).toBe(false);
+	});
+
+	it('should handle image onload event', () => {
+		expect(component.visible).toBe(false);
+		component.onLoad();
+		expect(component.visible).toBe(true);
+	});
+
+	it('should handle image onerror event', () => {
+		component.url = 'foobar';
+		component.visible = true;
+
+		component.onError();
+
+		expect(component.url).toBe(null);
+		expect(component.visible).toBe(false);
 	});
 	
 });
