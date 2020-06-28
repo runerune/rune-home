@@ -7,6 +7,7 @@ import { IndexComponent } from './index/index.component';
 import { PanoComponent } from './pano/pano.component';
 import { PhotoComponent } from './photo/photo.component';
 import { PhotoListComponent } from './photo-list/photo-list.component';
+import { PhotoFeaturedComponent } from './photo-featured/photo-featured.component';
 
 @NgModule({
 	declarations: [
@@ -14,7 +15,8 @@ import { PhotoListComponent } from './photo-list/photo-list.component';
 		IndexComponent,
 		PanoComponent,
 		PhotoComponent,
-		PhotoListComponent
+		PhotoListComponent,
+		PhotoFeaturedComponent
 	],
 	imports: [
 		BrowserModule,
