@@ -29,9 +29,12 @@ export class PhotoComponent implements OnInit {
 	}
 
 	onLoad() {
+		this.visible = true;
 	}
-
+	
 	onError() {
+		this.visible = false;
+		this.url = null;
 	}
 
 }
