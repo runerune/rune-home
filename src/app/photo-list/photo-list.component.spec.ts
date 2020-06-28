@@ -18,7 +18,7 @@ describe('PhotoListComponent', () => {
 		})
 		.compileComponents();
 
-		pushSpy = spyOn(TestBed.get(EventBusService), 'push');
+		pushSpy = spyOn(TestBed.inject(EventBusService), 'push');
 	}));
 
 	beforeEach(() => {
