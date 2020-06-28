@@ -12,6 +12,7 @@ export class PhotoFeaturedComponent implements OnInit {
 
 	async ngOnInit(): Promise<void> {
 		this.url = null;
+		this.load();
 	}
 
 	async load() {
