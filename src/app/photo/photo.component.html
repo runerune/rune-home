@@ -1,6 +1,6 @@
 <div class="photo" *ngIf="url" (click)="close()">
 	<div class="photo-inner" [ngClass]="{ 'visible': visible }">
-		<img [src]="url" alt="selected photo" (load)="onLoad()">
+		<img [src]="url" alt="selected photo" (load)="onLoad()" (error)="onError">
 		<button (click)="close()">close</button>
 	</div>
 	<div class="photo-placeholder" [ngClass]="{ 'visible': !visible }" role="status">

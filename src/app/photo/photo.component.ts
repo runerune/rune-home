@@ -36,6 +36,9 @@ export class PhotoComponent implements OnInit {
 	onError() {
 		console.log('image onerror');
 		this.visible = false;
+
+		window.alert('Could not load image '+this.url);
+
 		this.url = null;
 	}
 
