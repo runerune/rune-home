@@ -11,11 +11,15 @@ describe('PhotoComponent', () => {
 	class MockEventBusService {
 		listeners: Array<CallableFunction>;
 
+		constructor() {
+			this.listeners = [];
+		}
+
 		addListener(name: string, event: string, listener: CallableFunction) {
 			this.listeners.push(listener);
 		}
 
-		fakePush(data: any) {
+		push(name: string, data: any) {
 			for(let listener of this.listeners) {
 				listener(data);
 			}
@@ -29,7 +33,7 @@ describe('PhotoComponent', () => {
 		})
 		.compileComponents();
 
-		injectedService = TestBed.get(EventBusService);
+		injectedService = TestBed.inject(EventBusService);
 	}));
 
 	beforeEach(() => {
@@ -43,7 +47,7 @@ describe('PhotoComponent', () => {
 	});
 
 	it('should react to show photo event', () => {
-		injectedService.fakePush('photoSelect', 'foobar')
+		injectedService.push('photoSelect', 'foobar')
 		expect(component.url).toBe('foobar');
 	});
 
