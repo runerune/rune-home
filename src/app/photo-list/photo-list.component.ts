@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Photo } from '../interface/Photo';
+import { EventBusService } from '../event-bus.service';
 
 @Component({
 	selector: 'app-photo-list',
@@ -10,14 +11,15 @@ export class PhotoListComponent implements OnInit {
 	photos: Array<Photo>;
 	selected: number;
 
-	constructor() { 
+	constructor(
+		public eventBusService: EventBusService,
+	) { 
 		this.photos = [];
 		this.selected = 0;
 	}
 
 	async ngOnInit(): Promise<void> {
 		this.photos = await this.load();
-		console.log(this.photos);
 	}
 
 	async load(): Promise<Array<Photo>> {
@@ -26,7 +28,15 @@ export class PhotoListComponent implements OnInit {
 	}
 
 	select(index: number): void {
-		this.selected = (index > this.photos.length-1) ? this.photos.length-1 : index;
+		if(index > this.photos.length-1) return;
+		console.log('################################');
+		console.log('################################');
+		console.log('################################');
+		console.log(this.eventBusService);
+		console.log('################################');
+		console.log('################################');
+		console.log('################################');
+		this.eventBusService.push('photoSelect', this.photos[index].url);
 	}
 
 }
