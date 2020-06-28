@@ -29,13 +29,6 @@ export class PhotoListComponent implements OnInit {
 
 	select(index: number): void {
 		if(index > this.photos.length-1) return;
-		console.log('################################');
-		console.log('################################');
-		console.log('################################');
-		console.log(this.eventBusService);
-		console.log('################################');
-		console.log('################################');
-		console.log('################################');
 		this.eventBusService.push('photoSelect', this.photos[index].url);
 	}
 
