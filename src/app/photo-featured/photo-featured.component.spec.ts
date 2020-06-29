@@ -22,3 +22,4 @@ describe('PhotoFeaturedComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+})
