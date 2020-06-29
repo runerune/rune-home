@@ -3,7 +3,7 @@
 	
 	<ul>
 		<li *ngFor="let photo of photos">
-			<figure style="background-image: url({{photo.thumb}});" (click)="select(photo.url)">
+			<figure style="background-image: url({{photo.thumb}});" (click)="select(photo.url, photo.alt)">
 				<img [src]="photo.thumb" [alt]="photo.alt">
 			</figure>
 		</li>

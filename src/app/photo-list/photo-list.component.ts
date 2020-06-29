@@ -27,8 +27,11 @@ export class PhotoListComponent implements OnInit {
 		return await photos.json();
 	}
 
-	select(url: string): void {
-		this.eventBusService.push('photoSelect', url);
+	select(url: string, alt: string): void {
+		this.eventBusService.push('photoSelect', {
+			url: url,
+			alt: alt
+		});
 	}
 
 }
