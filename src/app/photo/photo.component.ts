@@ -8,6 +8,7 @@ import { EventBusService } from '../event-bus.service';
 })
 export class PhotoComponent implements OnInit {
 	url: string | null;
+	alt: string | null;
 	visible: boolean;
 
 	constructor(
@@ -20,6 +21,7 @@ export class PhotoComponent implements OnInit {
 	ngOnInit(): void {
 		this.eventBusService.addListener('photoListener', 'photoSelect', (data: { url: string, alt: string }) => {
 			this.url = (data.url.length) ? data.url : null;
+			this.alt = (data.alt.length) ? data.alt : null;
 		});
 	}
 

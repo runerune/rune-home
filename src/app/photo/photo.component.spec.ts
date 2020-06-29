@@ -52,6 +52,7 @@ describe('PhotoComponent', () => {
 			alt: 'bazbaf',
 		});
 		expect(component.url).toBe('foobar');
+		expect(component.alt).toBe('bazbaf');
 	});
 
 	it('should clear url on close', () => {
