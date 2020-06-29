@@ -27,10 +27,4 @@ describe('PhotoFeaturedComponent', () => {
 		expect(component.url).toBe(null);
 		expect(component.load).toEqual(jasmine.any(Function));
 	});
-		
-	it('should load featured photo', async () => {
-		await component.load();
-		expect(typeof component.url).toBe('string');
-		expect(typeof component.alt).toBe('string');
-	});
 });

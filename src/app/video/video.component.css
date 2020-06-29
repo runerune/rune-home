@@ -2,13 +2,15 @@
 	position: relative;
 	z-index: 50;
 	width: 100%;
+	margin-top: 4rem;
+	backdrop-filter: contrast(70%) blur(1rem);
 }
 
 .video iframe {
 	width: 1280px;
 	height: 720px;
 	margin: 0 auto;
-	padding: 0 0 4rem;
+	padding: 4rem 0;
 	display: block;
 }
 

@@ -13,10 +13,10 @@
 	width: 32vh;
 	display: block;
 	background: rgba(255,255,255,.4);
-	backdrop-filter: blur(.5em);
+	backdrop-filter: blur(.5rem);
 	border-radius: 32vh;
 	margin: -16vh 0 0 -16vh;
-	box-shadow: 0 0 1em rgba(0,0,0,.5), inset 0 0 4em 4em rgba(255,255,255,.6);
+	box-shadow: 0 0 1rem rgba(0,0,0,.5), inset 0 0 3.5rem 3.5rem rgba(255,255,255,.76);
 }
 
 .intro h1 { 

@@ -1,5 +1,5 @@
 <div class="photo-featured" style="background-image: url({{url}});">
-	<h2>Aerial video & <br> photography</h2>
-	<p>Landscapes &bull; Events <span>&bull;</span> Construction &bull; Real estate</p>
+	<h2 [innerHTML]="parsedHead"></h2>
+	<p [innerHTML]="parsedTagline"></p>
 	<img [src]="url" class="hide" [alt]="url">
 </div>

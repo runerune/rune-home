@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 
 @Component({
 	selector: 'app-photo-featured',
@@ -6,20 +7,20 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./photo-featured.component.css']
 })
 export class PhotoFeaturedComponent implements OnInit {
-	url: string | null;
-	alt: string | null;
+	@Input() url: string;
+	@Input() alt: string;
+	@Input() head: string;
+	@Input() tagline: string;
 
-	constructor() { }
+	parsedHead: SafeHtml;
+	parsedTagline: SafeHtml;
 
-	async ngOnInit(): Promise<void> {
-		this.url = null;
-		this.load();
+	constructor(
+		private domSanitizer: DomSanitizer
+	) { }
+
+	ngOnInit(): void {
+		this.parsedHead = this.domSanitizer.bypassSecurityTrustHtml(this.head);
+		this.parsedTagline = this.domSanitizer.bypassSecurityTrustHtml(this.tagline);
 	}
-
-	async load() {
-		const featured = await (await fetch('../../assets/featured.json')).json();
-		this.url = featured.url;
-		this.alt = featured.alt;
-	}
-
 }
