@@ -1,11 +1,13 @@
-<div class="photo-list">
+<section class="photo-list">
+	<h2 class="hide">Photos</h2>
+	
 	<ul>
 		<li *ngFor="let photo of photos">
-			<div style="background-image: url({{photo.thumb}});" (click)="select(photo.url)">
+			<figure style="background-image: url({{photo.thumb}});" (click)="select(photo.url)">
 				<img [src]="photo.thumb" [alt]="photo.url">
-			</div>
+			</figure>
 		</li>
 	</ul>
 
 	<app-video></app-video>
-</div>
+</section>

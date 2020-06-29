@@ -39,3 +39,11 @@ body {
 .pnlm-container {
 	background-image: none;
 }
+
+.hide {
+	position: absolute;
+	top: -1000vw;
+	left: -1000vh;
+	width: 1rem;
+	height: 1rem;
+}
