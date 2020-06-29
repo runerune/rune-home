@@ -54,8 +54,11 @@ describe('PhotoListComponent', () => {
 	});
 
 	it('should select a photo', () => {
-		component.select('foobar');
-		expect(pushSpy).toHaveBeenCalledWith('photoSelect', 'foobar');
+		component.select('foobar', 'bazbaf');
+		expect(pushSpy).toHaveBeenCalledWith('photoSelect', {
+			url: 'foobar',
+			alt: 'bazbaf'
+		});
 	});
 
 });
