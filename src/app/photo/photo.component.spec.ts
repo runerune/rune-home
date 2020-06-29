@@ -47,7 +47,10 @@ describe('PhotoComponent', () => {
 	});
 
 	it('should react to show photo event', () => {
-		injectedService.push('photoSelect', 'foobar')
+		injectedService.push('photoSelect', {
+			url: 'foobar',
+			alt: 'bazbaf',
+		});
 		expect(component.url).toBe('foobar');
 	});
 

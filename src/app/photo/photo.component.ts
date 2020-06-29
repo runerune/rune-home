@@ -18,8 +18,8 @@ export class PhotoComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.eventBusService.addListener('photoListener', 'photoSelect', (url: string) => {
-			this.url = (url.length) ? url : null;
+		this.eventBusService.addListener('photoListener', 'photoSelect', (data: { url: string, alt: string }) => {
+			this.url = (data.url.length) ? data.url : null;
 		});
 	}
 
