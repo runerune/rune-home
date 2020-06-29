@@ -22,9 +22,3 @@ describe('PhotoFeaturedComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
-
-	it('should init module', () => {
-		expect(component.url).toBe(null);
-		expect(component.load).toEqual(jasmine.any(Function));
-	});
-});
