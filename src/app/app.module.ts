@@ -9,6 +9,7 @@ import { PhotoComponent } from './photo/photo.component';
 import { PhotoListComponent } from './photo-list/photo-list.component';
 import { PhotoFeaturedComponent } from './photo-featured/photo-featured.component';
 import { VideoComponent } from './video/video.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
 	declarations: [
@@ -18,7 +19,8 @@ import { VideoComponent } from './video/video.component';
 		PhotoComponent,
 		PhotoListComponent,
 		PhotoFeaturedComponent,
-		VideoComponent
+		VideoComponent,
+		FooterComponent
 	],
 	imports: [
 		BrowserModule,
