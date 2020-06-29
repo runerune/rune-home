@@ -2,7 +2,6 @@
 	position: relative;
 	z-index: 50;
 	width: 100%;
-	margin-top: 4rem;
 	backdrop-filter: contrast(70%) blur(1rem);
 }
 
