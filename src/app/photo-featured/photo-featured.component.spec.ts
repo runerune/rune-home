@@ -31,5 +31,6 @@ describe('PhotoFeaturedComponent', () => {
 	it('should load featured photo', async () => {
 		await component.load();
 		expect(typeof component.url).toBe('string');
+		expect(typeof component.alt).toBe('string');
 	});
 });

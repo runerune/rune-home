@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotoFeaturedComponent implements OnInit {
 	url: string | null;
+	alt: string | null;
 
 	constructor() { }
 
@@ -18,6 +19,7 @@ export class PhotoFeaturedComponent implements OnInit {
 	async load() {
 		const featured = await (await fetch('../../assets/featured.json')).json();
 		this.url = featured.url;
+		this.alt = featured.alt;
 	}
 
 }
