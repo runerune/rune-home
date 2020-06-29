@@ -40,14 +40,16 @@ describe('PhotoListComponent', () => {
 	it('should load photos', async () => {
 		spyOn(component, 'load').and.returnValue(Promise.resolve([{
 			url: 'foo',
-			thumb: 'bar'
+			thumb: 'bar',
+			alt: 'baz'
 		}]));
 		const result = await component.load();
 		
 		expect(result.length).toBeGreaterThan(0);
 		expect(result[0]).toEqual({
 			url: 'foo',
-			thumb: 'bar'
+			thumb: 'bar',
+			alt: 'baz'
 		});
 	});
 

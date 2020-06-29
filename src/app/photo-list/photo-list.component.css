@@ -30,7 +30,7 @@
 	box-sizing: border-box;
 }
 
-.photo-list li div {
+.photo-list li figure {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -42,7 +42,7 @@
 	max-height: 18rem;
 }
 
-.photo-list li:hover div {
+.photo-list li:hover figure {
 	transition: box-shadow .1s, filter .1s;
 	box-shadow: 0 0 0 .3rem rgba(255,255,255,.5);
 	filter: contrast(110%) brightness(1.05);
