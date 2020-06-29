@@ -2,7 +2,7 @@
 	<h2 class="hide">Selected photo</h2>
 	
 	<figure class="photo-inner" [ngClass]="{ 'visible': visible }">
-		<img [src]="url" alt="selected photo" (load)="onLoad()" (error)="onError">
+		<img [src]="url" [alt]="alt" (load)="onLoad()" (error)="onError">
 		<button (click)="close()">close</button>
 	</figure>
 	<aside class="photo-placeholder" [ngClass]="{ 'visible': !visible }" role="status">
