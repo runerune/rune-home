@@ -8,7 +8,6 @@
 	top: 45%;
 	left: 50%;
 	z-index: 50;
-	text-indent: -1000vw;
 	height: 32vh;
 	width: 32vh;
 	display: block;
@@ -21,6 +20,7 @@
 
 .intro h1 { 
 	position: absolute;
+	text-indent: -1000vw;
 }
 
 .intro img {
