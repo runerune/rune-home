@@ -31,6 +31,7 @@
 
 @media only screen and (max-width: 1000px) {
 	.photo-featured h2 {
+		padding-top: 10rem;
 		font-size: 2.4rem;
 		text-shadow: .15rem .15rem 0 rgba(0,0,0,.9);
 	}
@@ -49,5 +50,16 @@
 
 	.photo-featured p {
 		font-size: 1.3rem;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.photo-featured h2 {
+		padding-top: 9.4rem;
+		font-size: 2.1rem;
+	}
+
+	.photo-featured p {
+		font-size: 1.2rem;
 	}
 }

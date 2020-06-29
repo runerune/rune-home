@@ -36,7 +36,8 @@
 
 @media only screen and (max-width: 690px) {
 	.video iframe {
-		width: 405px;
+		width: 100%;
+		max-width: 405px;
 		height: 202px;
 	}
 } 
