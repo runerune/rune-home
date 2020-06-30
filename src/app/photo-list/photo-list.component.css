@@ -5,6 +5,13 @@
 	backdrop-filter: contrast(70%) blur(1rem);
 }
 
+@-moz-document url-prefix() {
+	.photo-list {
+		background: rgba(40,40,40,.9);
+		backdrop-filter: none;
+	}
+}
+
 .photo-list ul {
 	width: 100%;
 	display: flex;
