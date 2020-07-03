@@ -22,4 +22,12 @@ describe('VideoComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+
+	it('should contain a YouTube video iframe', async () => {
+		fixture.whenStable().then(() => {
+			const elementVideoFrame = fixture.debugElement.nativeElement.querySelector('iframe');
+			expect(elementVideoFrame).not.toEqual(null);
+			expect(elementVideoFrame.src).toContain('youtube.com');
+		});
+	});
 });
