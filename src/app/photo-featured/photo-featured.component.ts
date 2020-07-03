@@ -19,7 +19,10 @@ export class PhotoFeaturedComponent implements OnInit {
 		private domSanitizer: DomSanitizer
 	) { }
 
-	ngOnInit(): void {
+	ngOnInit = this.update;
+	ngOnChanges = this.update;
+
+	update(): void {
 		this.parsedHead = this.domSanitizer.bypassSecurityTrustHtml(this.head);
 		this.parsedTagline = this.domSanitizer.bypassSecurityTrustHtml(this.tagline);
 	}
