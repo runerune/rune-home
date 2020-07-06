@@ -28,7 +28,7 @@
 							"node_modules/pannellum/build/pannellum.css"
 						],
 						"scripts": [
-							"src/vendor/pannellum.js"
+							"node_modules/pannellum/build/pannellum.js"
 						]
 					},
 					"configurations": {

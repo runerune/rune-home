@@ -25,7 +25,7 @@ module.exports = function (config) {
 	},
 	files: [
 		"node_modules/pannellum/build/pannellum.css",
-		"src/vendor/pannellum.js"
+		"node_modules/pannellum/build/pannellum.js"
 	],
     reporters: ['progress', 'kjhtml'],
     port: 9876,
