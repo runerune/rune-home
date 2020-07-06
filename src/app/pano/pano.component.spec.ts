@@ -27,20 +27,24 @@ describe('PanoComponent', () => {
 		expect(component.pano).toBeDefined();
 	});
 
-	it('should return hfov 80 for large screens', () => {
-		expect(component.getHfov(1401)).toBe(80);
-		expect(component.getHfov(1400)).toBe(80);
+	it('should return hfov 100 for large screens', () => {
+		expect(component.getHfov(1401)).toBe(100);
+		expect(component.getHfov(1400)).toBe(100);
 	});
 
-	it('should return hfov 60 for medium screens', () => {
+	it('should return hfov 80 for medium screens', () => {
 		expect(component.getHfov(1399)).toBe(80);
 		expect(component.getHfov(1000)).toBe(80);
 	});
 
-	it('should return hfov 40 for small screens', () => {
-		expect(component.getHfov(999)).toBe(80);
-		expect(component.getHfov(700)).toBe(80);
-		expect(component.getHfov(0)).toBe(80);
+	it('should return hfov 60 for small screens', () => {
+		expect(component.getHfov(999)).toBe(60);
+		expect(component.getHfov(700)).toBe(60);
+	});
+
+	it('should return hfov 40 for very small screens', () => {
+		expect(component.getHfov(699)).toBe(40);
+		expect(component.getHfov(0)).toBe(40);
 	});
 
 	it('should return big image url for large and medium screens', () => {
