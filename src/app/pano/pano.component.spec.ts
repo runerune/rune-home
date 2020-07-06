@@ -26,4 +26,30 @@ describe('PanoComponent', () => {
 	it('should init panorama', () => {
 		expect(component.pano).toBeDefined();
 	});
+
+	it('should return hfov 80 for large screens', () => {
+		expect(component.getHfov(1401)).toBe(80);
+		expect(component.getHfov(1400)).toBe(80);
+	});
+
+	it('should return hfov 60 for medium screens', () => {
+		expect(component.getHfov(1399)).toBe(80);
+		expect(component.getHfov(1000)).toBe(80);
+	});
+
+	it('should return hfov 40 for small screens', () => {
+		expect(component.getHfov(999)).toBe(80);
+		expect(component.getHfov(700)).toBe(80);
+		expect(component.getHfov(0)).toBe(80);
+	});
+
+	it('should return big image url for large and medium screens', () => {
+		expect(component.getUrl(1400)).toBe('assets/pano-background.jpg');
+		expect(component.getUrl(1000)).toBe('assets/pano-background.jpg');
+	});
+
+	it('should return small image url for small screens', () => {
+		expect(component.getUrl(999)).toBe('pano-background-small.jpg');
+		expect(component.getUrl(200)).toBe('pano-background-small.jpg');
+	});
 });
