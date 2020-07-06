@@ -53,7 +53,7 @@ describe('PanoComponent', () => {
 	});
 
 	it('should return small image url for small screens', () => {
-		expect(component.getUrl(999)).toBe('pano-background-small.jpg');
-		expect(component.getUrl(200)).toBe('pano-background-small.jpg');
+		expect(component.getUrl(999)).toBe('assets/pano-background-small.jpg');
+		expect(component.getUrl(200)).toBe('assets/pano-background-small.jpg');
 	});
 });
