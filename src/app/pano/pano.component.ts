@@ -10,18 +10,12 @@ export class PanoComponent implements OnInit {
 	pano;
 	pitchInterval;
 
-	private hfov: number = 100;
-
-	constructor() {
-		if(window.innerWidth < 1400) this.hfov = 80;
-		if(window.innerWidth < 1000) this.hfov = 60;
-		if(window.innerWidth < 700) this.hfov = 40;
-	}
+	constructor() {	}
 
 	ngOnInit(): void {
 		this.pano = pannellum.viewer('pano-container', {
 			type: 'equirectangular',
-			panorama: 'assets/pano-background.jpg',
+			panorama: this.getUrl(window.innerWidth),
 			preview: 'assets/pano-preview.jpg',
 			keyboardZoom: false,
 			disableKeyboardCtrl: true,
@@ -36,9 +30,22 @@ export class PanoComponent implements OnInit {
 			autoRotateStopDelay: 1,
 			showControls: false,
 			draggable: false,
-			hfov: this.hfov,
+			hfov: this.getHfov(window.innerWidth),
 		});
 
+	}
+
+	getHfov(width: number): number {
+		if(width < 700) return 40;
+		if(width < 1000) return 60;
+		if(width < 1400) return 80;
+
+		return 100;
+	}
+
+	getUrl(width: number): string {
+		if(width < 1000) return 'assets/pano-background-small.jpg';
+		return 'assets/pano-background.jpg';
 	}
 
 }
