@@ -36,7 +36,6 @@ export class PanoComponent implements OnInit {
 	}
 
 	getHfov(width: number): number {
-		if(width < 700) return 40;
 		if(width < 1000) return 60;
 		if(width < 1400) return 80;
 
@@ -44,7 +43,7 @@ export class PanoComponent implements OnInit {
 	}
 
 	getUrl(width: number): string {
-		if(width < 1000) return 'assets/pano-background-small.jpg';
+		if(width <= 640) return 'assets/pano-background-small.jpg';
 		return 'assets/pano-background.jpg';
 	}
 
